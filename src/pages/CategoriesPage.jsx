@@ -54,8 +54,8 @@ function CategoriesPage() {
         <table className="bg-slate-100 shadow-2xl rounded-t-3xl">
           <thead>
             <tr>
-              <td className=" p-2 w-72 break-all">categories</td>
-              <td className=" p-2 w-60 break-all">action</td>
+              <th className="text-xl p-2 w-72 break-all ">categories</th>
+              <th className="text-xl p-2 w-60 break-all">action</th>
             </tr>
           </thead>
           <tbody>
