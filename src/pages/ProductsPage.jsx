@@ -1224,7 +1224,7 @@ function ProductsPage() {
   ];
   return (
     <>
-    {/* <ResponsiveDrawer/> */}
+    {/* <ResponsiveDrawer/>` */}
     <div className="flex flex-wrap gap-4  justify-center items-center m-10">
       {arr.map((element, index) => (
         <div class=" productCard p-4 border rounded-lg shadow-md h-fit w-80 flex flex-col justify-center items-center">
@@ -1235,7 +1235,7 @@ function ProductsPage() {
           />
           <h2 class="text-lg font-semibold">{element.title}</h2>
           <p class="text-gray-600">Brand: {element.brand}</p>
-          <p class="text-green-500 font-bold">{element.price}</p>
+          <p class="text-green-500 font-bold">${element.price}</p>
 
           <button
             index={index}

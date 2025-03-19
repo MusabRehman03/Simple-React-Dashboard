@@ -117,6 +117,38 @@ function ResponsiveDrawer(props) {
         </ListItem>
       </List>
       </Link>
+      <Link to="/ManualProducts">
+      <List>
+        <ListItem key={"5"} disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            
+              
+              <ListItemText primary={"ManualProducts"} />
+
+          </ListItemButton>
+        </ListItem>
+      </List>
+      </Link>
+      <Link to="/Categories">
+      <List>
+        <ListItem key={"6"} disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            
+              
+              <ListItemText primary={"Categories"} />
+
+          </ListItemButton>
+        </ListItem>
+      </List>
+      </Link>
     </div>
   );
 

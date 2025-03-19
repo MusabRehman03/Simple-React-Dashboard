@@ -52,6 +52,24 @@ Ensure you have the following installed:
 "@emotion/react": "latest"
 ```
 
+## Folder Structure
+```
+📂 your-dashboard-project
+├── 📁 src
+│   ├── 📁 components
+│   │   ├── Navbar.js
+│   │   ├── Sidebar.js
+│   │   ├── Dashboard.js
+│   │   ├── Products.js
+│   │   ├── Charts.js
+│   ├── App.js
+│   ├── index.js
+├── 📄 package.json
+├── 📄 README.md
+```
+
+## Screenshots
+_Add relevant screenshots of the dashboard and products page here._
 
 ## Contributing
 Feel free to submit **issues and pull requests** to improve the project.

@@ -11,7 +11,7 @@ const xLabels = [
   'Sunday',
 ];
 
-export default function AreaChart() {
+function AreaChart() {
   return (
     <LineChart
       width={670}
@@ -26,3 +26,4 @@ export default function AreaChart() {
     />
   );
 }
+export default AreaChart
