@@ -1,10 +1,13 @@
 import React from 'react'
+import ResponsiveDrawer from '../ResponsiveDrawer'
 
-import BasicGrid from '../Grid'
+// import BasicGrid from '../Grid'
 function HomePage() {
   return (
     <div >
-        <BasicGrid/>
+        {/* <BasicGrid/>
+         */}
+         <ResponsiveDrawer/>
     </div>
   )
 }

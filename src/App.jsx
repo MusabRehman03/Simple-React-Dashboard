@@ -17,8 +17,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
+          {/* <Route path="/" element={<Layout />}> */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/About" element={<AboutPage />} />
             <Route path="/Settings" element={<SettingsPage />} />
             <Route path="/Contact" element={<ContactPage />} />
@@ -26,7 +26,7 @@ function App() {
             <Route path="/ManualProducts" element={< ManualProductsPage />} />
             <Route path="/Categories" element={< CategoriesPage />} />
 
-          </Route>
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
 

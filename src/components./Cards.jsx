@@ -41,15 +41,18 @@ const cards = [
 function SelectActionCard() {
   const [selectedCard, setSelectedCard] = React.useState(0);
   return (
-    <Box
-      sx={{
-        width: '97.5%',
-        display: 'flex',
-       justifyContent:'space-between'
-      }}
-    >
+    // <Box
+    //   sx={{
+    //     width: '97.5%',
+    //     display: 'flex',
+    //    flexWrap: 'wrap',
+    //    alignItems:'center',
+    //    gap: '20px'
+    //   }}
+    // >
+    <div className="flex items-center w-full justify-center 2xl:justify-between gap-10  flex-wrap">
       {cards.map((card, index) => (
-        <Card sx={{width:'430px'}}>
+        <Card sx={{ width:'410px'}}>
           <CardActionArea
             onClick={() => setSelectedCard(index)}
             data-active={selectedCard === index ? "" : undefined}
@@ -83,7 +86,8 @@ function SelectActionCard() {
           </CardActionArea>
         </Card>
       ))}
-    </Box>
+      </div>
+    // </Box>
   );
 }
 

@@ -1,7 +1,28 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 
 export default function BasicPie() {
+  const [chartWidth, setChartWidth] = useState(window.innerWidth > 1024 ? 388 : 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if(window.innerWidth > 1350){
+        setChartWidth(388); // Large screens
+      }
+      else if (window.innerWidth > 1024) {
+        setChartWidth(880); // Large screens
+      } else if (window.innerWidth > 768) {
+        setChartWidth(750); // Medium screens
+      } else {
+        setChartWidth(500); // Small screens
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <PieChart
       series={[
@@ -13,7 +34,7 @@ export default function BasicPie() {
           ],
         },
       ]}
-      width={388}
+      width={chartWidth}
       height={250}
       sx={{backgroundColor:'whitesmoke'}}
     />
