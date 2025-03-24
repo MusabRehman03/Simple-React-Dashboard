@@ -6,7 +6,9 @@ function CategoriesPage() {
   // let categoryArr=[]
   const [categoryArr, setCategoryArr] = useState(
     JSON.parse(localStorage.getItem("categoryArr")) || []
+
   );
+  // console.log("bgvbhj",categoryArr)
   function handleCategoryChange(e) {
     // const value=e.target
     setCategory(e.target.value);
@@ -24,6 +26,7 @@ function CategoriesPage() {
     }
     // console.log(categoryArr)
   };
+  console.log(categoryArr)
   function handleCategoryDelete(index){
     let tempArr=[...categoryArr]
     tempArr.splice(index,1)
@@ -54,12 +57,13 @@ function CategoriesPage() {
         <table className="bg-slate-100 shadow-2xl rounded-t-3xl">
           <thead>
             <tr>
-              <th className="text-xl p-2 w-72 break-all ">categories</th>
-              <th className="text-xl p-2 w-60 break-all">action</th>
+              <th className="text-lg p-2 w-72 break-all ">categories</th>
+              <th className="text-lg p-2 w-60 break-all">action</th>
             </tr>
           </thead>
           <tbody>
             {categoryArr.map((c,index) => (
+
               <tr>
                 <td className="border p-2 w-72 break-all">{c}</td>
                 <td className="border p-2 w-60 break-all">

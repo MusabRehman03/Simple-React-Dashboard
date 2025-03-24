@@ -25,9 +25,13 @@ export default function BiaxialLineChart() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 1376) {
         setChartWidth(880); // Large screens
-      } else if (window.innerWidth > 768) {
+      }else if (window.innerWidth > 1278) {
+        setChartWidth(800); // Large screens
+      } else if (window.innerWidth > 1024) {
+        setChartWidth(880); // Large screens
+      }else if (window.innerWidth > 768) {
         setChartWidth(750); // Medium screens
       } else {
         setChartWidth(500); // Small screens

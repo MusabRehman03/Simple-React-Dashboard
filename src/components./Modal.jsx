@@ -134,7 +134,7 @@ const Modal = ({
                 <option value="Food">Food</option>
                 <option value="Clothing">Clothing</option> */}
                 {
-                    categoryArr.map((c)=><option value="c">{c}</option>)
+                    categoryArr.map((c)=><option value={c}>{c}</option>)
                 }
               </select>
             </div>

@@ -69,7 +69,7 @@ function ManualProductsPage() {
         <div className=' w-full flex justify-center content-center mt-5'>
         <button onClick={handleAddButton} className='  rounded-xl bg-[#1976D2] font-semibold text-white items-center  py-3 px-5'>Add Product</button>
         </div>
-        <table className="w-[60%] m-auto text-center mt-6">
+        <table className="w-[60%] m-auto text-center mt-6 bg-slate-100 shadow-2xl rounded-t-3xl">
         <thead>
           <tr className="bg-gray-100">
             <th className="border p-2 w-40 break-all">Product Name</th>
@@ -98,7 +98,7 @@ function ManualProductsPage() {
         </tbody>
       </table>
 
-      {/* <h1 className={`w-full text-4xl font-bold text-center mt-5 ${isPresent?"block":"hidden" }`}>No Products Added Yet</h1> */}
+      {/* <h1 className={`w-full text-4xl font-bold text-center mt-5 `}> {tempArr.length==0&&"No Products Added Yet"}</h1> */}
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} productsArr={productsArr} setProductsArr={setProductsArr} product={product} setProduct={setProduct}/>
       {/* <EditModal isOpenEdit={isOpenEdit} setIsOpenEdit={setIsOpenEdit} productsArr={productsArr} setProductsArr={setProductsArr}  product={product} setProduct={setProduct}/> */}

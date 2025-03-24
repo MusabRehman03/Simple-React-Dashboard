@@ -24,17 +24,99 @@ import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
 import SelectActionCard from "./components./Cards";
 import LineChart from "./components./LineChart";
-import PieChart from "./components./PieChart"
-import AreaChart from "./components./AreaChart"
-import BarChart from "./components./BarChart"
-
+import PieChart from "./components./PieChart";
+import AreaChart from "./components./AreaChart";
+import BarChart from "./components./BarChart";
+import { useState } from "react";
+import AboutPage from "./pages/AboutPage";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
-
+  const [display, setDisplay] = useState({
+    home: true,
+    about: false,
+    contact: false,
+    settings: false,
+    products: false,
+    manualProducts: false,
+    categories: false,
+  });
+  const handleDisplay = (text) => {
+    if (text == "home") {
+      setDisplay({
+        home: true,
+        about: false,
+        contact: false,
+        settings: false,
+        products: false,
+        manualProducts: false,
+        categories: false,
+      });
+    } else if ((text = "about")) {
+      setDisplay({
+        home: false,
+        about: true,
+        contact: false,
+        settings: false,
+        products: false,
+        manualProducts: false,
+        categories: false,
+      });
+    } else if ((text = "contact")) {
+      setDisplay({
+        home: false,
+        about: false,
+        contact: true,
+        settings: false,
+        products: false,
+        manualProducts: false,
+        categories: false,
+      });
+    } else if ((text = "settings")) {
+      setDisplay({
+        home: false,
+        about: false,
+        contact: false,
+        settings: true,
+        products: false,
+        manualProducts: false,
+        categories: false,
+      });
+    } else if ((text = "products")) {
+      setDisplay({
+        home: false,
+        about: false,
+        contact: false,
+        settings: false,
+        products: true,
+        manualProducts: false,
+        categories: false,
+      });
+    } else if ((text = "manualProducts")) {
+      setDisplay({
+        home: false,
+        about: false,
+        contact: false,
+        settings: false,
+        products: false,
+        manualProducts: true,
+        categories: false,
+      });
+    } else if ((text = "categories")) {
+      setDisplay({
+        home: false,
+        about: false,
+        contact: false,
+        settings: false,
+        products: false,
+        manualProducts: false,
+        categories: true,
+      });
+    }
+  };
   const handleDrawerClose = () => {
     setIsClosing(true);
     setMobileOpen(false);
@@ -54,7 +136,11 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <Divider />
-      <List>
+      <List
+        onClick={() => {
+          handleDisplay("home");
+        }}
+      >
         <Link to="/">
           <ListItem key={"0"} disablePadding>
             <ListItemButton>
@@ -68,7 +154,11 @@ function ResponsiveDrawer(props) {
         </Link>
       </List>
       {/* <Divider /> */}
-      <List>
+      <List
+        onClick={() => {
+          handleDisplay("about");
+        }}
+      >
         <Link to="/About">
           <ListItem key={"3"} disablePadding>
             <ListItemButton>
@@ -81,7 +171,11 @@ function ResponsiveDrawer(props) {
           </ListItem>
         </Link>
       </List>
-      <List>
+      <List
+        onClick={() => {
+          handleDisplay("contact");
+        }}
+      >
         <Link to="/Contact">
           <ListItem key={"1"} disablePadding>
             <ListItemButton>
@@ -94,7 +188,11 @@ function ResponsiveDrawer(props) {
           </ListItem>
         </Link>
       </List>
-      <List>
+      <List
+        onClick={() => {
+          handleDisplay("settings");
+        }}
+      >
         <Link to="/Settings">
           <ListItem key={"2"} disablePadding>
             <ListItemButton>
@@ -108,52 +206,58 @@ function ResponsiveDrawer(props) {
         </Link>
       </List>
       <Link to="/Products">
-      <List>
-        <ListItem key={"4"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              <ShoppingCartIcon />
-            </ListItemIcon>
-            
-              
-              <ListItemText primary={"Products"} />
+        <List
+          onClick={() => {
+            handleDisplay("products");
+          }}
+        >
+          <ListItem key={"4"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                <ShoppingCartIcon />
+              </ListItemIcon>
 
-          </ListItemButton>
-        </ListItem>
-      </List>
+              <ListItemText primary={"Products"} />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Link>
       <Link to="/ManualProducts">
-      <List>
-        <ListItem key={"5"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              <ShoppingCartIcon />
-            </ListItemIcon>
-            
-              
-              <ListItemText primary={"ManualProducts"} />
+        <List
+          onClick={() => {
+            handleDisplay("manualProducts");
+          }}
+        >
+          <ListItem key={"5"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                <ShoppingCartIcon />
+              </ListItemIcon>
 
-          </ListItemButton>
-        </ListItem>
-      </List>
+              <ListItemText primary={"ManualProducts"} />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Link>
       <Link to="/Categories">
-      <List>
-        <ListItem key={"6"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
-              <ShoppingCartIcon />
-            </ListItemIcon>
-            
-              
-              <ListItemText primary={"Categories"} />
+        <List
+          onClick={() => {
+            handleDisplay("categories");
+          }}
+        >
+          <ListItem key={"6"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {/* {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} */}
+                <ShoppingCartIcon />
+              </ListItemIcon>
 
-          </ListItemButton>
-        </ListItem>
-      </List>
+              <ListItemText primary={"Categories"} />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Link>
     </div>
   );
@@ -166,13 +270,13 @@ function ResponsiveDrawer(props) {
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
       <AppBar
-  position="fixed"
-  sx={{
-    // width: { sm: `calc(100% - ${drawerWidth}px)` },
-    // ml: { sm: `${drawerWidth}px` },
-    zIndex: (theme) => theme.zIndex.drawer + 1, // Ensures AppBar is above the drawer
-  }}
->
+        position="fixed"
+        sx={{
+          // width: { sm: `calc(100% - ${drawerWidth}px)` },
+          // ml: { sm: `${drawerWidth}px` },
+          zIndex: (theme) => theme.zIndex.drawer + 1, // Ensures AppBar is above the drawer
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -189,14 +293,12 @@ function ResponsiveDrawer(props) {
         </Toolbar>
       </AppBar>
 
-
-      
       <Box
         component="nav"
         sx={{ width: { lg: drawerWidth } }}
         aria-label="mailbox folders"
       >
-         {/* flexShrink: { lg: 0 } */}
+        {/* flexShrink: { lg: 0 } */}
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -219,7 +321,7 @@ function ResponsiveDrawer(props) {
         >
           {drawer}
         </Drawer>
-        
+
         <Drawer
           variant="permanent"
           sx={{
@@ -234,20 +336,22 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
       </Box>
-      
-      
-<div className="flex flex-col gap-10 items-center px-10 mt-28">
-  <SelectActionCard/>
-  <div className="flex xl:flex-row flex-col items-center gap-10 ">
-  <LineChart/>
-  <PieChart/>
-  </div>
-  {/* <div className="flex lg:flex-row flex-col items-center gap-6">
-  <AreaChart/>
-  <BarChart/>
-  </div> */}
-</div>
 
+      {display.home && (
+        <div className="flex flex-col gap-10 items-center px-10 mt-28">
+          <SelectActionCard />
+          <div className="flex xl:flex-row flex-col items-center gap-10 ">
+            <LineChart />
+            <PieChart />
+          </div>
+          <div className="flex xl:flex-row flex-col items-center gap-10">
+            <AreaChart />
+            <BarChart />
+          </div>
+        </div>
+      )}
+      {display.about&&<AboutPage/>}
+      
     </Box>
   );
 }
