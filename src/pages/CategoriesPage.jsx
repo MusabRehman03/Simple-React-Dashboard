@@ -26,7 +26,7 @@ function CategoriesPage() {
     }
     // console.log(categoryArr)
   };
-  console.log(categoryArr)
+  // console.log(categoryArr)
   function handleCategoryDelete(index){
     let tempArr=[...categoryArr]
     tempArr.splice(index,1)
