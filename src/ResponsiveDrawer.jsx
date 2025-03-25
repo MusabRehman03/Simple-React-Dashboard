@@ -337,7 +337,7 @@ function ResponsiveDrawer(props) {
         </Drawer>
       </Box>
 
-      {display.home && (
+      {/* {display.home && (
         <div className="flex flex-col gap-10 items-center px-10 mt-28">
           <SelectActionCard />
           <div className="flex xl:flex-row flex-col items-center gap-10 ">
@@ -350,7 +350,7 @@ function ResponsiveDrawer(props) {
           </div>
         </div>
       )}
-      {display.about&&<AboutPage/>}
+      {display.about&&<AboutPage/>} */}
       
     </Box>
   );

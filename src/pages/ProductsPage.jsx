@@ -1225,7 +1225,7 @@ function ProductsPage() {
   return (
     <>
     {/* <ResponsiveDrawer/>` */}
-    <div className="flex flex-wrap gap-4  justify-center items-center m-10">
+    <div className="flex flex-wrap xl:ml-[290px] ml-0 gap-4  justify-center items-center mt-28 mb-10">
       {arr.map((element, index) => (
         <div class=" productCard p-4 border rounded-lg shadow-md h-fit w-80 flex flex-col justify-center items-center">
           <img

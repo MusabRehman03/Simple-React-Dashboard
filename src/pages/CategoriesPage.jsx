@@ -34,8 +34,8 @@ function CategoriesPage() {
     localStorage.setItem("categoryArr", JSON.stringify(tempArr));
   }
   return (
-    <div>
-      <div className="flex justify-center w-full mt-10 space-x-10 ">
+    <div className="xl:ml-[240px] ml-0 mt-28">
+      <div className="flex justify-center  w-full  space-x-10 ">
         <input
           onChange={handleCategoryChange}
           value={category}

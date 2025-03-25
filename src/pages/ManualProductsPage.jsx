@@ -65,8 +65,8 @@ function ManualProductsPage() {
 // useEffect({},[categoryArr])
   return (
     
-    <div>
-        <div className=' w-full flex justify-center content-center mt-5'>
+    <div className='xl:ml-[250px] ml-0 mt-28'>
+        <div className=' w-full  flex justify-center content-center '>
         <button onClick={handleAddButton} className='  rounded-xl bg-[#1976D2] font-semibold text-white items-center  py-3 px-5'>Add Product</button>
         </div>
         <table className="w-[60%] m-auto text-center mt-6 bg-slate-100 shadow-2xl rounded-t-3xl">
